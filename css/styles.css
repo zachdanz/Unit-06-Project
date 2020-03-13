@@ -119,6 +119,17 @@ button {
   font-size: var(--font-size-medium);
 }
 
+.btn__reset:hover {
+  background-color: lightcoral;
+  cursor: pointer;
+  color: blue;
+}
+
+.btn__reset:active {
+  background-color: coral;
+  color: darkblue;
+}
+
 /* Overlay */
 
 #overlay {
