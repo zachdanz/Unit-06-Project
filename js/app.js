@@ -1,9 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     const qwerty = document.getElementById('qwerty');
+    const buttons = document.querySelectorAll('button');
     const phraseDiv = document.getElementById('phrase');
     const missed = 0;
     const startButton = document.querySelector('.btn__reset');
-    const ul = document.querySelector('ul');
+    const ul = document.getElementById('secretMessage');
 
     startButton.addEventListener('click', (e) => {
         $(e.target.parentNode).fadeOut("250")
@@ -11,15 +12,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const phrases = [
-        "You are a very good guesser",
-        "Coding is fun and intuitive",
-        "Cannot get CoronaVirus while learning to code",
-        "Not even my wife could guess this",
-        "JavaScript can cure cancer",
-        "These phrases are from an array",
-        "Unguessable",
-        "This is an easy one",
-        "Lets play Zelda",
+        // "You are a very good guesser",
+        // "Coding is fun and intuitive",
+        // "Cannot get CoronaVirus while learning to code",
+        // "Not even my wife could guess this",
+        // "JavaScript can cure cancer",
+        // "These phrases are from an array",
+        // "Unguessable",
+        // "This is an easy one",
+        // "Lets play Zelda",
         "Call me senoria",
         
     ];
@@ -46,19 +47,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const phraseArray = getRandomPhraseAsArray(phrases);
     addPhraseToDisplay(phraseArray); 
 
-    qwerty.addEventListener('click', (e) => {
-        function checkLetter(guess){
-            const li = ul.children;
-            for (let i=0; i < li.length; i++){
-                if (guess === li[i].textContent.toLowerCase()){
-                    li[i].classList.add('show');
-                } else {
-
-                }
+    function checkLetter(guess){
+        const letter = document.querySelectorAll("button");
+        const foundMatch = null;
+        for (let i=0; i < letter.length; i++){
+            if (guess.textContent === letter[i].textContent.toLowerCase()){
+                letter[i].classList.add('show');
+                foundMatch = guess.textContent;
+            } else {
+                null
             }
+        }
+        return foundMatch;
+    }
+
+    qwerty.addEventListener('click', (e) => {
         e.target.className = "chosen";
         e.target.disabled = true;
-        const letterFound = checkLetter(e);
-        }
+        checkLetter(e.target.textContent);
     });
 });
