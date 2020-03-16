@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const qwerty = document.getElementById('qwerty');
-    const buttons = document.querySelectorAll('button');
+    const buttons = qwerty.children;
     const phraseDiv = document.getElementById('phrase');
     const missed = 0;
     const startButton = document.querySelector('.btn__reset');
@@ -12,15 +12,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const phrases = [
-        // "You are a very good guesser",
-        // "Coding is fun and intuitive",
-        // "Cannot get CoronaVirus while learning to code",
-        // "Not even my wife could guess this",
-        // "JavaScript can cure cancer",
-        // "These phrases are from an array",
-        // "Unguessable",
-        // "This is an easy one",
-        // "Lets play Zelda",
+        "You are a very good guesser",
+        "Coding is fun and intuitive",
+        "Cannot get CoronaVirus while learning to code",
+        "Not even my wife could guess this",
+        "JavaScript can cure cancer",
+        "These phrases are from an array",
+        "Unguessable",
+        "This is an easy one",
+        "Lets play Zelda",
         "Call me senorita",
         
     ];
@@ -47,22 +47,37 @@ document.addEventListener('DOMContentLoaded', () => {
     const phraseArray = getRandomPhraseAsArray(phrases);
     addPhraseToDisplay(phraseArray); 
 
-    function checkLetter(guess){
-        const letter = document.getElementsByClassName("letter");
-        let foundMatch = null;
-        for (let i=0; i < letter.length; i++){
-            if (guess.textContent === letter[i].textContent.toLowerCase()){
-                letter[i].classList.add('show');
-                foundMatch = guess.textContent;
-            } 
-            return foundMatch;
-        }
-    }
+    // function checkLetter(guess){
+    //     const letter = document.getElementsByClassName("letter");
+    //     let foundMatch = null;
+    //     for (let i=0; i < letter.length; i++){
+    //         if (guess.textContent === letter[i].textContent.toLowerCase()){
+    //             letter[i].classList.add('show');
+    //             foundMatch = guess.textContent;
+    //         } 
+    //         return foundMatch;
+    //     }
+    // }
+
+    // qwerty.addEventListener('click', (e) => {
+    //     e.target.className = "chosen";
+    //     e.target.disabled = true;
+    //     checkLetter(e.target.textContent);
+    // });
 
     qwerty.addEventListener('click', (e) => {
-        e.target.className = "chosen";
-        e.target.disabled = true;
-        checkLetter(e.target.textContent);
-    });
+		let guess = e.target.textContent;
+		const letter = document.getElementsByClassName("letter");
+		let foundMatch = null;
+		for (let i = 0; i < letter.length; i++) {
+			if (guess === letter[i].textContent.toLowerCase()) {
+				e.target.className = 'chosen';
+				e.target.disabled = true;
+				letter[i].classList.add('show');
+			} else {
+				console.log('nope');
+			}
+		}
+	});
 });
 
