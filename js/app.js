@@ -65,3 +65,4 @@ document.addEventListener('DOMContentLoaded', () => {
         checkLetter(e.target.textContent);
     });
 });
+
