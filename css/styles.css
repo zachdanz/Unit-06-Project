@@ -164,7 +164,7 @@ button {
   font-size: var(--font-size-medium);
   height: 65px;
   width: 65px;
-  padding: 20px 1px 0 1px;
+  padding: 20px 1px 2px 1px;
   margin-right: 2px;
   color: transparent;
   background: var(--color-neutral-light);
@@ -178,7 +178,31 @@ button {
 .show {
   color: #000;
   background-color: #76CE82;
+	animation: flip-scale-up-ver 0.5s linear both;
 }
+
+/**
+ * ----------------------------------------
+ * animation flip-scale-up-ver
+ * ----------------------------------------
+ */
+
+@keyframes flip-scale-up-ver {
+  0% {
+    -webkit-transform: scale(1) rotateY(0);
+            transform: scale(1) rotateY(0);
+  }
+  50% {
+    -webkit-transform: scale(1.5) rotateY(180deg);
+            transform: scale(1.5) rotateY(180deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotateY(360deg);
+            transform: scale(1) rotateY(360deg);
+  }
+}
+
+
 
 /* Keyboard */
 
