@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // "Unguessable",
         // "This is an easy one",
         // "Lets play Zelda",
-        "Call me senoria",
+        "Call me senorita",
         
     ];
 
@@ -48,17 +48,15 @@ document.addEventListener('DOMContentLoaded', () => {
     addPhraseToDisplay(phraseArray); 
 
     function checkLetter(guess){
-        const letter = document.querySelectorAll("button");
-        const foundMatch = null;
+        const letter = document.getElementsByClassName("letter");
+        let foundMatch = null;
         for (let i=0; i < letter.length; i++){
             if (guess.textContent === letter[i].textContent.toLowerCase()){
                 letter[i].classList.add('show');
                 foundMatch = guess.textContent;
-            } else {
-                null
-            }
+                return foundMatch;
+            } 
         }
-        return foundMatch;
     }
 
     qwerty.addEventListener('click', (e) => {

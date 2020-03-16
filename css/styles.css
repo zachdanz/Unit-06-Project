@@ -148,8 +148,8 @@ button {
   }
 }
 
-button, .tries, .letter {
-  z-index: 5;
+.section {
+  z-index: 2;
 } 
 
 /* Title */
