@@ -54,8 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (guess.textContent === letter[i].textContent.toLowerCase()){
                 letter[i].classList.add('show');
                 foundMatch = guess.textContent;
-                return foundMatch;
             } 
+            return foundMatch;
         }
     }
 
