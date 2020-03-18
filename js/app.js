@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return phraseAsArray;
         } 
 
-        // Places chosen in the Phrase Div
+        // Places chosen item in the Phrase Div
         function addPhraseToDisplay(arr){
             for (let i=0; i < arr.length; i++) {
                 const letter = document.createElement('li');
