@@ -181,9 +181,9 @@ button {
 	animation: flip-scale-up-ver 0.5s linear both;
 }
 
-/**
+/*
  * ----------------------------------------
- * animation flip-scale-up-ver
+ * animation flip-scale-up-over
  * ----------------------------------------
  */
 
@@ -279,4 +279,12 @@ button {
 
 .lose a {
   color: var(--color-lose);
+}
+
+
+/* Word Wrapping */
+
+.word {
+  display: flex;
+  flex-flow: row nowrap;
 }

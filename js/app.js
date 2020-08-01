@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "Lets play Zelda",
         "Call me senorita",
         "Reinventing hangman",
-        "Coding from quarantine"
+        "Coding from quarantine",
     ];
     
     function nextRound () {
