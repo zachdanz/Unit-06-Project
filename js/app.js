@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const overlayText = document.querySelector('.title');
         if (guessedLetters.length === guessableLetters.length){
             overlay.className = "win";
-            overlayText.textContent = 'You are sicker than sick! Not in a CoronaVirus type of way. The message was "' + message + '".  Good job!';
+            overlayText.textContent = 'That was stupendous! The message was "' + message + '".';
             startButton.textContent = "Play again?";
             $(overlay).fadeIn(2500);
         } else if (missed === 5) {
