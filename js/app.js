@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const qwerty = document.getElementById('qwerty');
     const startButton = document.querySelector('.btn__reset');
     const ul = document.getElementById('secretMessage');
+    let message = "";
     let missed = 0;
 
     // Possible phrases
@@ -17,6 +18,12 @@ document.addEventListener('DOMContentLoaded', () => {
         "Call me senorita",
         "Reinventing hangman",
         "Coding from quarantine",
+        "You are loved",
+        "Keep wearing that smile",
+        "Whats the worst that could happen",
+        "Harry Potter and the undeclared variable",
+        "I love my dog",
+        "Clam chowder soup"
     ];
     
     function nextRound () {
@@ -24,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         function getRandomPhraseAsArray(arr){
             ul.textContent = "";
             const randomPhrase = arr[Math.floor(Math.random()*phrases.length)];
+            message = randomPhrase;
             const phraseAsArray = randomPhrase.split("");
             return phraseAsArray;
         } 
@@ -83,12 +91,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const overlayText = document.querySelector('.title');
         if (guessedLetters.length === guessableLetters.length){
             overlay.className = "win";
-            overlayText.textContent = "You are sicker than sick. Not in a CoronaVirus type of way. Good job!";
+            overlayText.textContent = 'You are sicker than sick! Not in a CoronaVirus type of way. The message was "' + message + '".  Good job!';
             startButton.textContent = "Play again?";
             $(overlay).fadeIn(2500);
         } else if (missed === 5) {
             overlay.className = "lose";
-            overlayText.textContent = "Sorry bro, but that was awful. Redeem yourself?";
+            overlayText.innerHTML = '<p>Sorry bro, but that was awful. It should have said: "' + message + '." <br><br>Redeem yourself?</You>';
             startButton.textContent = "Giving up was never an option.";
             $(overlay).fadeIn(2000);
         }
